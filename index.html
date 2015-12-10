@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>Castor JIRA Statistics</title>
-    <link rel="stylesheet" href="./reveal.js-3.1.0/css/reveal.css">
-    <link rel="stylesheet" href="./reveal.js-3.1.0/css/theme/night.css" id="theme">
+    <link rel="stylesheet" href="./node_modules/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="./node_modules/reveal.js/css/theme/night.css" id="theme">
 </head>
 
 <body>
@@ -13,20 +13,21 @@
     <div class="reveal">
 
         <div class="slides">
-
-            <section data-background-iframe="https://jira.xxx.com/plugins/servlet/Wallboard/?dashboardId=28397"></section>
-
-            <section data-background-iframe="https://jira.xxx.com/plugins/servlet/Wallboard/?dashboardId=28510"></section>
+            <!-- Add more sections for more slides -->
+            <section data-background-iframe="https://jira.hm.com/plugins/servlet/Wallboard/?dashboardId=28397"></section>
+            <section data-background-iframe="https://jira.hm.com/plugins/servlet/Wallboard/?dashboardId=28510"></section>
 
         </div>
 
     </div>
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="./reveal.js-3.1.0/js/reveal.js"></script>
+    <script src="./node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/reveal.js/js/reveal.js"></script>
 
     <script>
+        <!-- Change for adapt presentation like speed, transition etc -->
         Reveal.initialize({
-            autoSlide: 10000,
+            autoSlide: 10000, // Speed in ms
             autoSlideStoppable: false,
             loop: true,
             progress: false,
