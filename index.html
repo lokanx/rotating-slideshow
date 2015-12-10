@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Castor JIRA Statistics</title>
+    <link rel="stylesheet" href="./reveal.js-3.1.0/css/reveal.css">
+    <link rel="stylesheet" href="./reveal.js-3.1.0/css/theme/night.css" id="theme">
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <div class="slides">
+
+            <section data-background-iframe="https://jira.xxx.com/plugins/servlet/Wallboard/?dashboardId=28397"></section>
+
+            <section data-background-iframe="https://jira.xxx.com/plugins/servlet/Wallboard/?dashboardId=28510"></section>
+
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="./reveal.js-3.1.0/js/reveal.js"></script>
+
+    <script>
+        Reveal.initialize({
+            autoSlide: 10000,
+            autoSlideStoppable: false,
+            loop: true,
+            progress: false,
+            controls: false,
+            transitionSpeed: "slow",
+            backgroundTransitionSpeed: "slow",
+        });
+
+        Reveal.addEventListener('slidechanged', function(event) {
+            if (!window.backgroundFrames) {
+                window.backgroundFrames = $("div [ class ^= 'slide-background']").children("iframe");
+            }
+            var prevIndex = event.indexh - 1;
+            if (prevIndex < 0) {
+                prevIndex = Reveal.getTotalSlides() - 1;
+            }
+
+            if (window.backgroundFrames[prevIndex].hasAttribute("useCache")) {
+                window.backgroundFrames[prevIndex].removeAttribute("useCache");
+                console.log("Keeping slide cache");
+            } else {
+                window.backgroundFrames[prevIndex].setAttribute("useCache", "true");
+                console.log("Reloading slide: " + window.backgroundFrames[prevIndex].src);
+                window.backgroundFrames[prevIndex].src = window.backgroundFrames[prevIndex].src;
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
