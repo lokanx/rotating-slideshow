@@ -15,6 +15,6 @@
         "jquery": "^3.3.1"
     },
     "devDependencies": {
-        "live-server": "^0.8.2"
+        "live-server": "^1.2.2"
     }
 }
