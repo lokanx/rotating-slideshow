@@ -1,20 +1,24 @@
 {
-    "name": "rotating-slideshow",
-    "version": "1.1.0",
-    "description": "A rotating slideshow thingish",
-    "main": "index.html",
-    "scripts": {
-        "start": "live-server --port=9000 --host=localhost"
-    },
-    "keywords": [],
-    "author": "Björn Sjögren",
-    "license": "MIT",
-    "dependencies": {
-        "es6-shim": "^0.35.8",
-        "reveal.js": "^4.5.0",
-        "jquery": "^3.7.1"
-    },
-    "devDependencies": {
-        "live-server": "^1.2.2"
-    }
+   "name": "rotating-slideshow",
+   "version": "1.2.0",
+   "description": "A rotating slideshow thingish",
+   "main": "index.html",
+   "scripts": {
+      "start-dev": "browser-sync start --server --files '*.js,*.html'",
+      "start": "browser-sync start --server"
+   },
+   "keywords": ["slideshow", "reveal", "javascript"],
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/lokanx/rotating-slideshow.git"
+   },
+   "author": "Björn Sjögren",
+   "license": "MIT",
+   "dependencies": {
+      "es6-shim": "^0.35.8",
+      "reveal.js": "^4.5.0"
+   },
+   "devDependencies": {
+      "browser-sync": "^2.29.3"
+   }
 }

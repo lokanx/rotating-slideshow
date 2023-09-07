@@ -1,4 +1,5 @@
-((jquery) => {
+(() => {
+   console.log("init...");
    // Add more sections for more slides (content could be images, web pages etc)
    const SLIDE_URLS = [
       "http://yeoman.io/static/illustration-home-inverted.91b07808be.png",
@@ -6,15 +7,15 @@
       "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
    ];
 
-   const slidesContainerRef = jquery("#slidesContainerId");
-   if (slidesContainerRef.length !== 1) {
+   const slidesContainerRef = document.getElementById("slidesContainerId");
+   if (!slidesContainerRef) {
       console.log("Failed locate slides container");
    }
 
    SLIDE_URLS.forEach((url) => {
-      slidesContainerRef.append(
-         `<section data-background-iframe="${url}"></section>`
-      );
+      const section = document.createElement("section");
+      section.setAttribute("data-background-iframe", url);
+      slidesContainerRef.appendChild(section);
    });
 
    // Change for adapt presentation like speed, transition etc
@@ -28,27 +29,31 @@
       backgroundTransitionSpeed: "slow",
    });
 
+   let backgroundFrames = null;
+
    Reveal.addEventListener("slidechanged", function (event) {
-      if (!window.backgroundFrames) {
-         window.backgroundFrames = $(
-            "div [ class ^= 'slide-background']"
-         ).children("iframe");
+      if (!backgroundFrames) {
+         const backgroundsContainerRef = document.querySelector(
+            "div [class = 'backgrounds' ]"
+         );
+
+         const iframeContainerRefs =
+            backgroundsContainerRef.querySelectorAll("iframe");
+
+         backgroundFrames = iframeContainerRefs;
       }
       var prevIndex = event.indexh - 1;
       if (prevIndex < 0) {
          prevIndex = Reveal.getTotalSlides() - 1;
       }
 
-      if (window.backgroundFrames[prevIndex].hasAttribute("useCache")) {
-         window.backgroundFrames[prevIndex].removeAttribute("useCache");
+      if (backgroundFrames[prevIndex].hasAttribute("useCache")) {
+         backgroundFrames[prevIndex].removeAttribute("useCache");
          console.log("Keeping slide cache");
       } else {
-         window.backgroundFrames[prevIndex].setAttribute("useCache", "true");
-         console.log(
-            "Reloading slide: " + window.backgroundFrames[prevIndex].src
-         );
-         window.backgroundFrames[prevIndex].src =
-            window.backgroundFrames[prevIndex].src;
+         backgroundFrames[prevIndex].setAttribute("useCache", "true");
+         console.log("Reloading slide: " + backgroundFrames[prevIndex].src);
+         backgroundFrames[prevIndex].src = backgroundFrames[prevIndex].src;
       }
    });
-})(window.$);
+})();

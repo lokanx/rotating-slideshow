@@ -1,10 +1,15 @@
 # rotating-slideshow
+
 A rotating slideshow thingish
 
 ## To get started
 
 1. Run npm install
-2. Run npm start
+2. Run npm start or npm start-dev
+
+start: Production mode (no live reloads)
+start-dev\_: Development mode (with live reloads)
 
 ## Adapt for your needs
-Define sections in index.js (slideUrls) and set the URL's to what you want to display.
+
+Update index.js (SLIDE_URLS) and to define the sections (slide content) that you want to display.
