@@ -7,4 +7,4 @@ A rotating slideshow thingish
 2. Run npm start
 
 ## Adapt for your needs
-Add sections to index.html and set the URL's to what you want to display.
+Define sections in index.js (slideUrls) and set the URL's to what you want to display.
