@@ -1,13 +1,17 @@
 {
    "name": "rotating-slideshow",
-   "version": "1.2.0",
+   "version": "1.2.1",
    "description": "A rotating slideshow thingish",
    "main": "index.html",
    "scripts": {
       "start-dev": "browser-sync start --server --files '*.js,*.html'",
       "start": "browser-sync start --server"
    },
-   "keywords": ["slideshow", "reveal", "javascript"],
+   "keywords": [
+      "slideshow",
+      "reveal",
+      "javascript"
+   ],
    "repository": {
       "type": "git",
       "url": "https://github.com/lokanx/rotating-slideshow.git"
