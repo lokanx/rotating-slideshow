@@ -7,8 +7,8 @@ A rotating slideshow thingish
 1. Run npm install
 2. Run npm start or npm start-dev
 
-start: Production mode (no live reloads)
-start-dev\_: Development mode (with live reloads)
+*start: Production mode (no live reloads)<br>
+start-dev: Development mode (with live reloads)*
 
 ## Adapt for your needs
 
