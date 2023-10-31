@@ -20,7 +20,7 @@
    "license": "MIT",
    "dependencies": {
       "es6-shim": "^0.35.8",
-      "reveal.js": "^4.5.0"
+      "reveal.js": "^5.0.1"
    },
    "devDependencies": {
       "browser-sync": "^2.29.3"
