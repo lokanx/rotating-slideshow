@@ -23,6 +23,6 @@
       "reveal.js": "^5.0.1"
    },
    "devDependencies": {
-      "browser-sync": "^2.29.3"
+      "browser-sync": "^3.0.2"
    }
 }
